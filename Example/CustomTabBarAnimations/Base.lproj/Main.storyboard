@@ -9,7 +9,6 @@
         <!--Item-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="CustomTabBarAnimations_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
@@ -24,8 +23,9 @@
                         <color key="badgeColor" red="1" green="0.12575495950000001" blue="0.0432861753" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072.8" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1118" y="-679"/>
         </scene>
         <!--Custom Animations Tab Bar Controller-->
         <scene sceneID="Pnr-wa-ZK5">
@@ -33,6 +33,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WkI-b0-urX" customClass="CustomAnimationsTabBarController" customModule="CustomTabBarAnimations" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ijO-4y-Uv4">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="1" green="0.12575495950000001" blue="0.0432861753" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,11 +41,32 @@
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="3Jg-m4-mPa"/>
                         <segue destination="Zyg-Om-onF" kind="relationship" relationship="viewControllers" id="yi0-kN-jk8"/>
+                        <segue destination="efS-r9-U8o" kind="relationship" relationship="viewControllers" id="dpo-to-a4l"/>
+                        <segue destination="Gki-Eh-YSg" kind="relationship" relationship="viewControllers" id="b5h-Ys-1F5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xz3-3o-LUz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="bLF-fN-6g5">
+            <objects>
+                <viewController id="efS-r9-U8o" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dQK-Gw-cb6"/>
+                        <viewControllerLayoutGuide type="bottom" id="yhd-Dg-FjH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Ad-db-svK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="dot.square" catalog="system" id="pPt-5w-cX6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Du9-8P-Q1C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1118" y="643"/>
         </scene>
         <!--Item-->
         <scene sceneID="bQu-xo-xj1">
@@ -65,10 +87,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5A-uH-tex" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="881"/>
+            <point key="canvasLocation" x="1118" y="-18"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="oGX-i7-8el">
+            <objects>
+                <viewController id="Gki-Eh-YSg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XzJ-gw-dKC"/>
+                        <viewControllerLayoutGuide type="bottom" id="IGc-I6-EWZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="esV-ta-KFg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="04.circle.fill" catalog="system" id="YWd-Wf-86d"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vFx-M8-lEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1118" y="1303"/>
         </scene>
     </scenes>
     <resources>
+        <image name="04.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="dot.square" catalog="system" width="64" height="56"/>
         <image name="globe" catalog="system" width="64" height="60"/>
         <image name="person" catalog="system" width="64" height="58"/>
     </resources>

@@ -20,6 +20,9 @@ class CustomAnimationsTabBarController: UITabBarController {
         addStackView()
         constraintTop = dotsView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: 20)
         constraintTop.isActive = true
+        currentSelectedView = tabBar.items![0].value(forKey: "view") as! UIView
+        constraintLeft = dotsView.leftAnchor.constraint(equalTo: currentSelectedView.leftAnchor, constant: setConstraintValue())
+        constraintLeft.isActive = true
     }
     
     
@@ -33,7 +36,8 @@ class CustomAnimationsTabBarController: UITabBarController {
         dotsView.axis = .horizontal
         dotsView.distribution = .fillEqually
         dotsView.translatesAutoresizingMaskIntoConstraints = false
-        
+        dotsView.isHidden = true
+
         tabBar.addSubview(dotsView)
     }
     
