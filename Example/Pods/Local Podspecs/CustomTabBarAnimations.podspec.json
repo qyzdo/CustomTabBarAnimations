@@ -1,0 +1,22 @@
+{
+  "name": "CustomTabBarAnimations",
+  "version": "0.1.0",
+  "summary": "A short description of CustomTabBarAnimations.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/qyzdo/CustomTabBarAnimations",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "qyzdo": "qyzdo@outlook.com"
+  },
+  "source": {
+    "git": "https://github.com/qyzdo/CustomTabBarAnimations.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CustomTabBarAnimations/Classes/**/*"
+}
