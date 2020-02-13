@@ -84,7 +84,7 @@ class CustomAnimationsTabBarController: UITabBarController {
     
     func tabChangedAnimation(completion: @escaping (Bool) -> ()){
         //let time = abs(newIndex-currentIndex)
-        let time = itemsMax - 1
+        //let time = itemsMax - 1
         UIView.animate(withDuration: 0.2, delay: 0, animations: {
             self.dotsView.transform = CGAffineTransform.identity
             self.tabBar.layoutIfNeeded()
@@ -122,3 +122,40 @@ class CustomAnimationsTabBarController: UITabBarController {
     }
 }
 
+
+extension UIImage {
+    class func resize(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / image.size.width
+        let heightRatio = targetSize.height / image.size.height
+        
+        var newSize: CGSize
+        if widthRatio > heightRatio {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+        
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+    
+    func resize(to size: CGSize) -> UIImage {
+        return UIGraphicsImageRenderer(size: size).image { _ in
+            draw(in: CGRect(origin: .zero, size: size))
+        }
+    }
+    func resize(width: CGFloat) -> UIImage {
+        return resize(to: CGSize(width: width, height: width / (size.width / size.height)))
+    }
+    func resize(height: CGFloat) -> UIImage {
+        return resize(to: CGSize(width: height * (size.width / size.height), height: height))
+    }
+}

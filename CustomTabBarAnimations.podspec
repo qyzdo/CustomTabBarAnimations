@@ -9,7 +9,8 @@
 Pod::Spec.new do |s|
   s.name             = 'CustomTabBarAnimations'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of CustomTabBarAnimations.'
+  s.swift_versions   = '4.0'
+  s.summary          = 'Custom tab bar animations!'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -30,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '13.0'
 
-  s.source_files = 'CustomTabBarAnimations/Classes/**/*'
+  s.source_files = 'CustomTabBarAnimations/**/*'
   
   # s.resource_bundles = {
   #   'CustomTabBarAnimations' => ['CustomTabBarAnimations/Assets/*.png']
