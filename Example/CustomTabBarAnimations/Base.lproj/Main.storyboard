@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="1118" y="-679"/>
         </scene>
-        <!--Dots Animation Tab Bar Controller-->
+        <!--Stretching Animation Tab Bar Controller-->
         <scene sceneID="Pnr-wa-ZK5">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WkI-b0-urX" customClass="DotsAnimationTabBarController" customModule="CustomTabBarAnimations" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WkI-b0-urX" customClass="StretchingAnimationTabBarController" customModule="CustomTabBarAnimations" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ijO-4y-Uv4">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
