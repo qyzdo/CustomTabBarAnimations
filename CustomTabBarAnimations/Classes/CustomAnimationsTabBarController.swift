@@ -18,7 +18,7 @@ class CustomAnimationsTabBarController: UITabBarController {
     func setupView() {
         itemsMax = CGFloat(tabBar.items!.count)
         addStackView()
-        constraintTop = dotsView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: 20)
+        constraintTop = dotsView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: 15)
         constraintTop.isActive = true
         currentSelectedView = tabBar.items![0].value(forKey: "view") as! UIView
         constraintLeft = dotsView.leftAnchor.constraint(equalTo: currentSelectedView.leftAnchor, constant: setConstraintValue())
