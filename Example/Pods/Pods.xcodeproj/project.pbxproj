@@ -117,7 +117,7 @@
 		BAEAB2ADD34955EE77CBA4B43994B6F7 /* NMBExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1841F3F02CFE768143894A1CC15809 /* NMBExpectation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		BB1619BCE35A078A932C56B2519CCB6C /* BeLogical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCF867316D98C02445DE94F92161698 /* BeLogical.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		BB9F8B553DB6BDBCDEDBE4C627097DBF /* HaveValidSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BCB88A3944A0AA578C767A766F42DC /* HaveValidSnapshot.swift */; };
-		BD3C1865F49188A1AE39B1BCDB3C3BA8 /* CustomAnimationsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227781A54B7BBF671C237AA93C75513 /* CustomAnimationsTabBarController.swift */; };
+		BD3C1865F49188A1AE39B1BCDB3C3BA8 /* DotsAnimationTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227781A54B7BBF671C237AA93C75513 /* DotsAnimationTabBarController.swift */; };
 		BD8AB3699C483B11671A85C72CE92B50 /* ExampleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572E2B6BC86F1492D00AD6769E465605 /* ExampleGroup.swift */; };
 		BE2E0A9AC5E2019BFD31452E96ED83D9 /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A32AC5FC9462774488E6F2773D7570 /* AssertionRecorder.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		BEDC36DEA21352A0F346A2513EE0540E /* QuickSpecBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 05F3D57DE6385F0B15FDECFB5D0CD321 /* QuickSpecBase.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -388,7 +388,7 @@
 		C6F3B1C4B2A6BC75EEF0B18A77F2745D /* Nimble-Snapshots-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Nimble-Snapshots-Info.plist"; sourceTree = "<group>"; };
 		C8840D6C1270531B4A2D68B805556F67 /* UIImage+Compare.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Compare.m"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.m"; sourceTree = "<group>"; };
 		CA9AD83ED2C65245B3E184EFBA34CBA4 /* XCTestObservationCenter+CurrentTestCaseTracker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XCTestObservationCenter+CurrentTestCaseTracker.m"; sourceTree = "<group>"; };
-		D227781A54B7BBF671C237AA93C75513 /* CustomAnimationsTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomAnimationsTabBarController.swift; path = CustomTabBarAnimations/Classes/CustomAnimationsTabBarController.swift; sourceTree = "<group>"; };
+		D227781A54B7BBF671C237AA93C75513 /* DotsAnimationTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DotsAnimationTabBarController.swift; path = CustomTabBarAnimations/Classes/DotsAnimationTabBarController.swift; sourceTree = "<group>"; };
 		D3934BA2C502D39310A267CD5625AD57 /* FBSnapshotTestCase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.xcconfig; sourceTree = "<group>"; };
 		D4D496910E737F901629A363A4EFBEED /* BeIdenticalTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeIdenticalTo.swift; path = Sources/Nimble/Matchers/BeIdenticalTo.swift; sourceTree = "<group>"; };
 		D50C1A0D16BFAD8846126533C953C7BA /* Nimble.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Nimble.h; path = Sources/Nimble/Nimble.h; sourceTree = "<group>"; };
@@ -563,7 +563,7 @@
 		4F4AB630CECDFEFD36F2CC24187E0617 /* CustomTabBarAnimations */ = {
 			isa = PBXGroup;
 			children = (
-				D227781A54B7BBF671C237AA93C75513 /* CustomAnimationsTabBarController.swift */,
+				D227781A54B7BBF671C237AA93C75513 /* DotsAnimationTabBarController.swift */,
 				A830C8E2728C5BB82137F67BB818F2B5 /* Pod */,
 				CE0C9C75D47BFB571E5FD7C26BA69211 /* Support Files */,
 			);
@@ -1188,7 +1188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DAEFDF50998074387478B82DB74576 /* CustomTabBarAnimations-dummy.m in Sources */,
-				BD3C1865F49188A1AE39B1BCDB3C3BA8 /* CustomAnimationsTabBarController.swift in Sources */,
+				BD3C1865F49188A1AE39B1BCDB3C3BA8 /* DotsAnimationTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

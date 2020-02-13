@@ -1,6 +1,6 @@
 import UIKit
 
-class CustomAnimationsTabBarController: UITabBarController {
+class DotsAnimationTabBarController: UITabBarController {
     var dotsView = UIStackView()
     var currentIndex = 0
     var currentSelectedView = UIView()
@@ -87,8 +87,6 @@ class CustomAnimationsTabBarController: UITabBarController {
     }
     
     func tabChangedAnimation(completion: @escaping (Bool) -> ()){
-        //let time = abs(newIndex-currentIndex)
-        //let time = itemsMax - 1
         UIView.animate(withDuration: 0.2, delay: 0, animations: {
             self.dotsView.transform = CGAffineTransform.identity
             self.tabBar.layoutIfNeeded()
