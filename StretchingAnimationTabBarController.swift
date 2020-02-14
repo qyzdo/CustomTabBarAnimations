@@ -14,8 +14,6 @@ class StretchingAnimationTabBarController: UITabBarController {
     var newSelectedView = UIView()
     var itemsMax = CGFloat()
     var constraintCenter = NSLayoutConstraint()
-    var constraintLeft = NSLayoutConstraint()
-    var constraintRight = NSLayoutConstraint()
     var constraintTop = NSLayoutConstraint()
     
     override func viewDidLoad() {
@@ -25,18 +23,18 @@ class StretchingAnimationTabBarController: UITabBarController {
     
     func setupView() {
         itemsMax = CGFloat(tabBar.items!.count)
-        lineView.image = UIImage(systemName: "circle.fill")?.resize(to: CGSize(width: 15, height: 10)).withTintColor(.systemRed)
+        lineView.image = UIImage(systemName: "circle.fill")?.resize(to: CGSize(width: 5, height: 5)).withTintColor(.systemRed)
         tabBar.addSubview(lineView)
         lineView.translatesAutoresizingMaskIntoConstraints = false
         
         currentSelectedView = tabBar.items![0].value(forKey: "view") as! UIView
         
-        constraintTop = lineView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: 45)
+        constraintTop = lineView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: 50)
         constraintTop.isActive = true
         
-        constraintLeft = lineView.leftAnchor.constraint(equalTo: currentSelectedView.leftAnchor, constant: 35)
-        constraintLeft.isActive = true
-        
+        constraintCenter = lineView.centerXAnchor.constraint(equalTo: currentSelectedView.centerXAnchor)
+        constraintCenter.isActive = true
+
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -45,62 +43,25 @@ class StretchingAnimationTabBarController: UITabBarController {
         currentSelectedView = tabBar.selectedItem?.value(forKey: "view") as! UIView
         print("Poprzedni przycisk: \(currentIndex)")
         if(tabBarIndex != currentIndex){
-            if(tabBarIndex > currentIndex) {
-                goRightAnimation()
-            } else {
-                goLeftAnimation()
-            }
+            animation()
         }
         currentIndex = tabBarIndex
 
     }
     
-    func goLeftAnimation() {
-        print("goRightAnimation")
-        constraintLeft.isActive = false
-        lineView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        
-        constraintLeft = lineView.leftAnchor.constraint(equalTo: currentSelectedView.leftAnchor, constant: 35)
-        constraintLeft.isActive = true
-        
-        UIView.animate(withDuration: 0.5, animations: {
-            self.lineView.transform = CGAffineTransform.identity
-            self.tabBar.layoutIfNeeded()
-        }, completion:{ (finished: Bool) in
-            UIView.animate(withDuration: 0.2) {
-                self.constraintRight.isActive = false
-                self.constraintRight = self.lineView.rightAnchor.constraint(equalTo: self.currentSelectedView.rightAnchor, constant: -35)
-                self.constraintRight.isActive = true
-                self.tabBar.layoutIfNeeded()
-            }
-        })
-    }
-    
-    func goRightAnimation() {
-        print("goRightAnimation")
-        constraintRight.isActive = false
+    func animation() {
         constraintCenter.isActive = false
-
-        lineView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         
         constraintCenter = lineView.centerXAnchor.constraint(equalTo: currentSelectedView.centerXAnchor)
         constraintCenter.isActive = true
         
-        constraintRight = lineView.rightAnchor.constraint(equalTo: currentSelectedView.rightAnchor, constant: -35)
-        constraintRight.isActive = true
-        
-      
-        
-        UIView.animate(withDuration: 0.5, animations: {
-            self.lineView.transform = CGAffineTransform.identity
+        UIView.animate(withDuration: 0.5) {
             self.tabBar.layoutIfNeeded()
-        }, completion:{ (finished: Bool) in
-            UIView.animate(withDuration: 0.2) {
-                self.constraintLeft.isActive = false
-                self.constraintLeft = self.lineView.leftAnchor.constraint(equalTo: self.currentSelectedView.leftAnchor, constant: 35)
-                self.constraintLeft.isActive = true
-                self.tabBar.layoutIfNeeded()
-            }
-        })
+            UIView.animate(withDuration: 0.15, delay: 0.001, animations: {
+                self.lineView.transform = CGAffineTransform(scaleX: 60, y: 1.7)
+                
+                self.lineView.transform = CGAffineTransform.identity
+            })
+        }
     }
 }
