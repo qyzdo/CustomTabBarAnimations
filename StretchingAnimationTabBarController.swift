@@ -21,6 +21,15 @@ class StretchingAnimationTabBarController: UITabBarController {
         setupView()
     }
     
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        let tabBarIndex = (tabBar.items?.firstIndex(of: item))!
+        currentSelectedView = tabBar.selectedItem?.value(forKey: "view") as! UIView
+        if(tabBarIndex != currentIndex){
+            animation()
+        }
+        currentIndex = tabBarIndex
+    }
+    
     func setupView() {
         itemsMax = CGFloat(tabBar.items!.count)
         lineView.image = UIImage(systemName: "circle.fill")?.resize(to: CGSize(width: 5, height: 5)).withTintColor(.systemRed)
@@ -32,29 +41,11 @@ class StretchingAnimationTabBarController: UITabBarController {
         constraintTop = lineView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: 50)
         constraintTop.isActive = true
         
-        constraintCenter = lineView.centerXAnchor.constraint(equalTo: currentSelectedView.centerXAnchor)
-        constraintCenter.isActive = true
-
-    }
-    
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        let tabBarIndex = (tabBar.items?.firstIndex(of: item))!
-        print("Obecny przycisk: \(String(describing: tabBarIndex))")
-        currentSelectedView = tabBar.selectedItem?.value(forKey: "view") as! UIView
-        print("Poprzedni przycisk: \(currentIndex)")
-        if(tabBarIndex != currentIndex){
-            animation()
-        }
-        currentIndex = tabBarIndex
-
+        setCenterConstraint()
     }
     
     func animation() {
-        constraintCenter.isActive = false
-        
-        constraintCenter = lineView.centerXAnchor.constraint(equalTo: currentSelectedView.centerXAnchor)
-        constraintCenter.isActive = true
-        
+        setCenterConstraint()
         UIView.animate(withDuration: 0.5) {
             self.tabBar.layoutIfNeeded()
             UIView.animate(withDuration: 0.15, delay: 0.001, animations: {
@@ -63,5 +54,11 @@ class StretchingAnimationTabBarController: UITabBarController {
                 self.lineView.transform = CGAffineTransform.identity
             })
         }
+    }
+    
+    func setCenterConstraint() {
+        constraintCenter.isActive = false
+        constraintCenter = lineView.centerXAnchor.constraint(equalTo: currentSelectedView.centerXAnchor)
+        constraintCenter.isActive = true
     }
 }
