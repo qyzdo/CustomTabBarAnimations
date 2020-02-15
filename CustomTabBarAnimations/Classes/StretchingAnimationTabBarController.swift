@@ -15,7 +15,7 @@ class StretchingAnimationTabBarController: UITabBarController {
     var itemsMax = CGFloat()
     var constraintCenter = NSLayoutConstraint()
     var constraintTop = NSLayoutConstraint()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -40,7 +40,17 @@ class StretchingAnimationTabBarController: UITabBarController {
         
         constraintTop = lineView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: 50)
         constraintTop.isActive = true
-        
+        if UIDevice().userInterfaceIdiom == .phone {
+            switch UIScreen.main.nativeBounds.height {
+            case 1334:
+                //IPHONE 6,7,8 IPHONE 6S,7S,8
+                tabBar.bounds = view.frame.insetBy(dx: 10.0, dy: 7.0)
+            case 1920, 2208:
+                //IPHONE 6PLUS, 6SPLUS, 7PLUS, 8PLUS
+                tabBar.bounds = view.frame.insetBy(dx: 10.0, dy: 7.0)
+            default: break
+            }
+        }
         setCenterConstraint()
     }
     
